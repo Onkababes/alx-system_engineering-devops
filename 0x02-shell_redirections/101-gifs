@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Function to list .gif files without extensions
+list_gif_files() {
+  find "$1" -type f -name "*.gif" -exec sh -c 'for file; do echo "${file%.*}"; done' sh {} +
+}
+
+# Call the function on the current directory
+list_gif_files .
+
